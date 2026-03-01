@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namaz Vakti - Download / Indir</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 500px; margin: 60px auto; padding: 20px; text-align: center; color: #333; background: #f9f9f9; }
+    h1 { color: #0097A7; font-size: 24px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    .btn { display: block; padding: 16px 24px; margin: 12px auto; border-radius: 12px; text-decoration: none; color: white; font-size: 18px; font-weight: bold; max-width: 300px; }
+    .ios { background: #007AFF; }
+    .android { background: #34A853; }
+    .btn:hover { opacity: 0.9; }
+    .icon { font-size: 48px; margin-bottom: 10px; }
+    .redirect-msg { color: #999; font-size: 13px; margin-top: 30px; }
+  </style>
+  <script>
+    (function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /android/i.test(ua);
+
+      if (isIOS) {
+        window.location.href = 'https://apps.apple.com/app/id6759039673';
+      } else if (isAndroid) {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="icon">🕌</div>
+  <h1>Namaz Vakti</h1>
+  <p class="subtitle">Namaz Vakitleri, Ezan & Hatirlatici</p>
+
+  <a class="btn ios" href="https://apps.apple.com/app/id6759039673">
+    🍎 App Store'dan Indir
+  </a>
+
+  <a class="btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">
+    🤖 Google Play'den Indir
+  </a>
+
+  <p class="redirect-msg">Otomatik yonlendirilmediyseniz yukaridaki butonlara tiklayiniz.</p>
+</body>
+</html>
