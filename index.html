@@ -3,26 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Namaz Vakti - Support</title>
+  <title>Namaz Vaktim: Ezan, Kuran</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: 60px auto; padding: 20px; color: #333; }
-    h1 { color: #2c7a3f; }
-    p { line-height: 1.6; }
-    a { color: #2c7a3f; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; background: #f5f7fa; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0097A7 0%, #00796B 100%);
+      color: white; text-align: center; padding: 60px 20px 50px;
+    }
+    .hero-icon { font-size: 64px; margin-bottom: 12px; }
+    .hero h1 { font-size: 32px; margin-bottom: 8px; }
+    .hero p { font-size: 16px; opacity: 0.9; max-width: 400px; margin: 0 auto; }
+
+    /* Language Tabs */
+    .lang-tabs { text-align: center; padding: 16px 0 0; background: #fff; border-bottom: 1px solid #e0e0e0; }
+    .lang-tab { display: inline-block; padding: 10px 24px; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .lang-tab.active { color: #0097A7; border-bottom-color: #0097A7; }
+    .lang-tab:hover { color: #0097A7; }
+
+    /* Content */
+    .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+
+    /* Features */
+    .features { padding: 40px 0; }
+    .features h2 { text-align: center; font-size: 22px; margin-bottom: 24px; color: #00796B; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .feature-card {
+      background: white; border-radius: 12px; padding: 20px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-2px); }
+    .feature-icon { font-size: 32px; margin-bottom: 8px; }
+    .feature-card h3 { font-size: 14px; color: #333; margin-bottom: 4px; }
+    .feature-card p { font-size: 12px; color: #888; }
+
+    /* Download */
+    .download { text-align: center; padding: 40px 0; }
+    .download h2 { font-size: 22px; margin-bottom: 20px; color: #00796B; }
+    .store-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .store-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; border-radius: 12px; text-decoration: none;
+      color: white; font-size: 16px; font-weight: 600; transition: opacity 0.2s;
+    }
+    .store-btn:hover { opacity: 0.9; }
+    .store-btn.ios { background: #007AFF; }
+    .store-btn.android { background: #34A853; }
+
+    /* Support */
+    .support {
+      background: white; border-radius: 12px; padding: 30px; margin: 0 0 40px;
+      text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .support h2 { font-size: 20px; margin-bottom: 12px; color: #00796B; }
+    .support a { color: #0097A7; font-size: 18px; font-weight: 600; text-decoration: none; }
+    .support a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      background: #263238; color: #aaa; text-align: center; padding: 24px 20px;
+      font-size: 13px;
+    }
+    footer a { color: #4DB6AC; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { margin-bottom: 8px; }
+    .footer-links a { margin: 0 12px; }
+
+    @media (max-width: 480px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 26px; }
+    }
   </style>
 </head>
 <body>
-  <h1>🕌 Namaz Vakti - Reklamsız</h1>
 
-  <p>
-    <strong>TR:</strong> Uygulama hakkında sorularınız için aşağıdaki e-posta adresinden bize ulaşabilirsiniz.<br>
-    <strong>EN:</strong> For support or questions, please contact us via email.<br>
-    <strong>DE:</strong> Für Support oder Fragen kontaktieren Sie uns per E-Mail.
-  </p>
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-icon">🕌</div>
+  <h1>Namaz Vaktim</h1>
+  <p id="heroSubtitle">Namaz Vakitleri, Kur'an, Kible Pusulasi ve daha fazlasi</p>
+</div>
 
-  <p>📧 <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
+<!-- Language Tabs -->
+<div class="lang-tabs">
+  <span class="lang-tab active" onclick="setLang('tr')">Turkce</span>
+  <span class="lang-tab" onclick="setLang('en')">English</span>
+  <span class="lang-tab" onclick="setLang('de')">Deutsch</span>
+</div>
 
-  <hr>
-  <p><small>Available on the App Store & Google Play</small></p>
+<div class="container">
+
+  <!-- TR -->
+  <div class="lang-content active" id="lang-tr">
+    <div class="features">
+      <h2>Ozellikler</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Namaz Vakitleri</h3><p>Gunluk, haftalik ve aylik namaz vakitleri</p></div>
+        <div class="feature-card"><div class="feature-icon">📖</div><h3>Kur'an-i Kerim</h3><p>114 sure, sesli dinleme ozelligi</p></div>
+        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Kible Pusulasi</h3><p>Hassas kible yonu ve kalibrasyon</p></div>
+        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Dualar</h3><p>10 kategori, 22 dua Arapca ve anlami</p></div>
+        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Ezan Bildirimi</h3><p>Sesli ezan ve hatirlatici alarmlar</p></div>
+        <div class="feature-card"><div class="feature-icon">📿</div><h3>Dijital Tesbih</h3><p>Zikirlerinizi kolayca sayma</p></div>
+        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramazan</h3><p>Imsak/iftar ve oruc takibi</p></div>
+        <div class="feature-card"><div class="feature-icon">📅</div><h3>Dini Gunler</h3><p>Onemli dini gun ve geceler</p></div>
+      </div>
+    </div>
+    <div class="download">
+      <h2>Simdi Indir</h2>
+      <div class="store-buttons">
+        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
+        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
+      </div>
+    </div>
+    <div class="support">
+      <h2>Destek & Iletisim</h2>
+      <p>Sorulariniz icin bize ulasin:</p>
+      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- EN -->
+  <div class="lang-content" id="lang-en">
+    <div class="features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Prayer Times</h3><p>Daily, weekly and monthly prayer times</p></div>
+        <div class="feature-card"><div class="feature-icon">📖</div><h3>Holy Quran</h3><p>114 surahs with audio recitation</p></div>
+        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Qibla Compass</h3><p>Precise qibla direction with calibration</p></div>
+        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Duas & Prayers</h3><p>10 categories, 22 prayers with Arabic and meanings</p></div>
+        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Adhan Notification</h3><p>Audio adhan and reminder alarms</p></div>
+        <div class="feature-card"><div class="feature-icon">📿</div><h3>Digital Tasbeeh</h3><p>Easy dhikr counter</p></div>
+        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramadan</h3><p>Suhoor/Iftar times and fasting tracker</p></div>
+        <div class="feature-card"><div class="feature-icon">📅</div><h3>Religious Days</h3><p>Important Islamic dates and events</p></div>
+      </div>
+    </div>
+    <div class="download">
+      <h2>Download Now</h2>
+      <div class="store-buttons">
+        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
+        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
+      </div>
+    </div>
+    <div class="support">
+      <h2>Support & Contact</h2>
+      <p>For questions or feedback, reach out to us:</p>
+      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- DE -->
+  <div class="lang-content" id="lang-de">
+    <div class="features">
+      <h2>Funktionen</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Gebetszeiten</h3><p>Tagliche, wochentliche und monatliche Gebetszeiten</p></div>
+        <div class="feature-card"><div class="feature-icon">📖</div><h3>Heiliger Koran</h3><p>114 Suren mit Audio-Rezitation</p></div>
+        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Qibla-Kompass</h3><p>Prazise Qibla-Richtung mit Kalibrierung</p></div>
+        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Bittgebete</h3><p>10 Kategorien, 22 Gebete mit Arabisch und Bedeutung</p></div>
+        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Adhan-Benachrichtigung</h3><p>Audio-Adhan und Erinnerungsalarme</p></div>
+        <div class="feature-card"><div class="feature-icon">📿</div><h3>Digitale Gebetskette</h3><p>Einfacher Dhikr-Zahler</p></div>
+        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramadan</h3><p>Suhoor/Iftar-Zeiten und Fastenverfolgung</p></div>
+        <div class="feature-card"><div class="feature-icon">📅</div><h3>Religiose Tage</h3><p>Wichtige islamische Termine und Ereignisse</p></div>
+      </div>
+    </div>
+    <div class="download">
+      <h2>Jetzt Herunterladen</h2>
+      <div class="store-buttons">
+        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
+        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
+      </div>
+    </div>
+    <div class="support">
+      <h2>Support & Kontakt</h2>
+      <p>Bei Fragen oder Feedback kontaktieren Sie uns:</p>
+      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="/privacy-policy.html">Privacy Policy / Gizlilik Politikasi</a>
+    <a href="mailto:bayram.namazapp@gmail.com">Contact</a>
+  </div>
+  <p>&copy; 2026 Namaz Vaktim. All rights reserved.</p>
+</footer>
+
+<script>
+  const subtitles = {
+    tr: 'Namaz Vakitleri, Kur\'an, Kible Pusulasi ve daha fazlasi',
+    en: 'Prayer Times, Quran, Qibla Compass and more',
+    de: 'Gebetszeiten, Koran, Qibla-Kompass und mehr'
+  };
+  function setLang(lang) {
+    document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.lang-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.lang-tab')[{tr:0,en:1,de:2}[lang]].classList.add('active');
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.getElementById('heroSubtitle').textContent = subtitles[lang];
+  }
+</script>
+
 </body>
 </html>
