@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.bayramgulac.namazvakti"],
+        "components": [
+          { "/": "/h/*", "comment": "Hatim invite link" },
+          { "/": "/z/*", "comment": "Zikir group invite link" }
+        ]
+      }
+    ]
+  }
+}

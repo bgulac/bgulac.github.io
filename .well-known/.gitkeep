@@ -1,0 +1,4 @@
+# Placeholder to keep .well-known directory in git.
+# Drop the following files here:
+#   - assetlinks.json              (from Android agent)
+#   - apple-app-site-association   (from iOS agent, NO file extension)
