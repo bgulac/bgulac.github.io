@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Deletion - Namaz Vaktim</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; background: #f5f7fa; }
+    .header {
+      background: linear-gradient(135deg, #0097A7 0%, #00796B 100%);
+      color: white; text-align: center; padding: 40px 20px;
+    }
+    .header h1 { font-size: 28px; margin-bottom: 8px; }
+    .header p { opacity: 0.9; }
+    .lang-tabs { text-align: center; padding: 16px 0 0; background: #fff; border-bottom: 1px solid #e0e0e0; }
+    .lang-tab { display: inline-block; padding: 10px 24px; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .lang-tab.active { color: #0097A7; border-bottom-color: #0097A7; }
+    .lang-tab:hover { color: #0097A7; }
+    .container { max-width: 800px; margin: 0 auto; padding: 30px 20px 60px; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+    .card { background: white; border-radius: 12px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .card h2 { color: #00796B; font-size: 22px; margin: 28px 0 12px; padding-top: 16px; border-top: 1px solid #e8e8e8; }
+    .card h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .card p, .card li { line-height: 1.7; margin-bottom: 10px; font-size: 15px; }
+    .card ul, .card ol { padding-left: 24px; margin-bottom: 16px; }
+    .card a { color: #0097A7; }
+    .email-box {
+      background: #fff8e1;
+      border: 2px solid #FFB300;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .email-box .label { font-size: 13px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .email-box a { font-size: 22px; font-weight: 700; color: #00796B; text-decoration: none; }
+    .email-box a:hover { text-decoration: underline; }
+    .info-box {
+      background: #e0f2f1;
+      border-left: 4px solid #00796B;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .warn-box {
+      background: #ffebee;
+      border-left: 4px solid #c62828;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    footer { background: #263238; color: #aaa; text-align: center; padding: 24px 20px; font-size: 13px; }
+    footer a { color: #4DB6AC; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Account &amp; Data Deletion</h1>
+  <p>Namaz Vaktim: Ezan, Kuran</p>
+</div>
+
+<div class="lang-tabs">
+  <span class="lang-tab" onclick="setLang('tr')">Turkce</span>
+  <span class="lang-tab active" onclick="setLang('en')">English</span>
+  <span class="lang-tab" onclick="setLang('de')">Deutsch</span>
+</div>
+
+<div class="container">
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="lang-content active" id="lang-en">
+<div class="card">
+
+<h2>Request Account &amp; Data Deletion</h2>
+<p>You have the right to request deletion of your account and all associated data stored by Namaz Vaktim. To submit a deletion request, follow the steps below.</p>
+
+<div class="email-box">
+  <div class="label">Email your request to</div>
+  <a href="mailto:bayram.namazapp@gmail.com?subject=Account%20Deletion%20Request">bayram.namazapp@gmail.com</a>
+</div>
+
+<h2>How to Request Deletion</h2>
+<ol>
+  <li>Open your email client and write to <strong>bayram.namazapp@gmail.com</strong></li>
+  <li>Use the subject: <strong>"Account Deletion Request"</strong></li>
+  <li>Include in the body:
+    <ul>
+      <li>The email address used to sign in to the app</li>
+      <li>Your device platform (iOS or Android)</li>
+      <li>Confirmation that you want all your data deleted</li>
+    </ul>
+  </li>
+  <li>Send the email</li>
+</ol>
+
+<div class="info-box">
+  <strong>Response time:</strong> We will process your deletion request within 30 days and send a confirmation email when complete.
+</div>
+
+<h2>What Will Be Deleted</h2>
+<p>The following data associated with your account will be permanently deleted:</p>
+<ul>
+  <li>Account information (email, display name, photo URL if any)</li>
+  <li>Group Zikr memberships and content you contributed</li>
+  <li>Shared Khatm group memberships and pages you read</li>
+  <li>Daily Question answers and answer history</li>
+  <li>Custom Zikr you created</li>
+  <li>Prayer tracking records (if synced to cloud)</li>
+  <li>Achievements progress</li>
+  <li>Any other data linked to your authentication ID</li>
+</ul>
+
+<h2>What Will NOT Be Deleted</h2>
+<ul>
+  <li>Anonymized analytics data already collected (cannot be linked back to you)</li>
+  <li>Data we are legally required to retain (such as transaction records for tax purposes)</li>
+  <li>Local data stored only on your device — to delete, simply uninstall the app</li>
+</ul>
+
+<h2>Alternative: Delete Locally</h2>
+<p>If you only want to remove data stored on your device (without contacting us), you can:</p>
+<ul>
+  <li><strong>iOS:</strong> Settings &rarr; General &rarr; iPhone Storage &rarr; Namaz Vaktim &rarr; Delete App</li>
+  <li><strong>Android:</strong> Settings &rarr; Apps &rarr; Namaz Vaktim &rarr; Storage &rarr; Clear Data, then Uninstall</li>
+</ul>
+
+<div class="warn-box">
+  <strong>Note:</strong> Uninstalling the app removes local data but does not delete cloud-stored data (such as shared khatm groups, daily question answers). For full deletion, please email us.
+</div>
+
+<h2>Cancel Your Subscription</h2>
+<p>Account deletion does <strong>not</strong> automatically cancel active subscriptions. Cancel separately:</p>
+<ul>
+  <li><strong>iOS:</strong> Settings &rarr; [Your Name] &rarr; Subscriptions &rarr; Namaz Vaktim Premium &rarr; Cancel</li>
+  <li><strong>Android:</strong> Google Play &rarr; Profile &rarr; Payments &amp; subscriptions &rarr; Subscriptions &rarr; Namaz Vaktim Premium &rarr; Cancel</li>
+</ul>
+
+<h2>Questions?</h2>
+<p>If you have any questions about this process, contact us at <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a> or read our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+</div>
+</div>
+
+<!-- ==================== TURKCE ==================== -->
+<div class="lang-content" id="lang-tr">
+<div class="card">
+
+<h2>Hesap ve Veri Silme Talebi</h2>
+<p>Namaz Vaktim tarafindan saklanan hesabinizin ve iliskili tum verilerinizin silinmesini talep etme hakkina sahipsiniz. Silme talebinde bulunmak icin asagidaki adimlari izleyin.</p>
+
+<div class="email-box">
+  <div class="label">Talebinizi su adrese gonderin</div>
+  <a href="mailto:bayram.namazapp@gmail.com?subject=Hesap%20Silme%20Talebi">bayram.namazapp@gmail.com</a>
+</div>
+
+<h2>Silme Nasil Talep Edilir</h2>
+<ol>
+  <li>E-posta istemcinizi acin ve <strong>bayram.namazapp@gmail.com</strong> adresine yazin</li>
+  <li>Konu satirina: <strong>"Hesap Silme Talebi"</strong> yazin</li>
+  <li>E-posta govdesine sunlari ekleyin:
+    <ul>
+      <li>Uygulamada giris yaparken kullandiginiz e-posta adresi</li>
+      <li>Cihaz platformunuz (iOS veya Android)</li>
+      <li>Tum verilerinizin silinmesini istediginize dair onay</li>
+    </ul>
+  </li>
+  <li>E-postayi gonderin</li>
+</ol>
+
+<div class="info-box">
+  <strong>Yanit suresi:</strong> Silme talebinizi 30 gun icinde isleme alacagiz ve tamamlandiginda onay e-postasi gonderecegiz.
+</div>
+
+<h2>Ne Silinecek</h2>
+<p>Hesabinizla iliskili sunlar kalici olarak silinecek:</p>
+<ul>
+  <li>Hesap bilgileri (e-posta, goruntuleme adi, varsa fotograf URL'si)</li>
+  <li>Toplu Zikir uyelikleri ve katkida bulundugunuz icerik</li>
+  <li>Paylasimli Hatim grup uyelikleri ve okudugunuz sayfalar</li>
+  <li>Gunun Sorusu cevaplari ve cevap gecmisi</li>
+  <li>Olusturdugunuz ozel zikirler</li>
+  <li>Namaz takibi kayitlari (buluta senkronize edildiyse)</li>
+  <li>Basarim ilerlemesi</li>
+  <li>Kimlik doğrulama ID'nize bagli diger tum veriler</li>
+</ul>
+
+<h2>Ne SILINMEYECEK</h2>
+<ul>
+  <li>Halihazirda toplanmis anonimlestirilmis analitik veri (size geri baglanamaz)</li>
+  <li>Yasal olarak saklamak zorunda oldugumuz veriler (vergi amacli islem kayitlari gibi)</li>
+  <li>Yalnizca cihazinizda saklanan yerel veriler — silmek icin uygulamayi kaldirmaniz yeterli</li>
+</ul>
+
+<h2>Alternatif: Yerel Silme</h2>
+<p>Yalnizca cihazinizdaki verileri kaldirmak istiyorsaniz (bizimle iletisime gecmeden):</p>
+<ul>
+  <li><strong>iOS:</strong> Ayarlar &rarr; Genel &rarr; iPhone Depolama &rarr; Namaz Vaktim &rarr; Uygulamayi Sil</li>
+  <li><strong>Android:</strong> Ayarlar &rarr; Uygulamalar &rarr; Namaz Vaktim &rarr; Depolama &rarr; Verileri Temizle, sonra Kaldir</li>
+</ul>
+
+<div class="warn-box">
+  <strong>Not:</strong> Uygulamayi kaldirmak yerel verileri kaldirir ancak bulutta saklanan verileri (paylasimli hatim gruplari, gunun sorusu cevaplari gibi) silmez. Tam silme icin lutfen bize e-posta gonderin.
+</div>
+
+<h2>Aboneliginizi Iptal Edin</h2>
+<p>Hesap silme aktif abonelikleri otomatik olarak iptal <strong>etmez</strong>. Ayri olarak iptal edin:</p>
+<ul>
+  <li><strong>iOS:</strong> Ayarlar &rarr; [Adiniz] &rarr; Abonelikler &rarr; Namaz Vaktim Premium &rarr; Iptal Et</li>
+  <li><strong>Android:</strong> Google Play &rarr; Profil &rarr; Odemeler ve abonelikler &rarr; Abonelikler &rarr; Namaz Vaktim Premium &rarr; Iptal Et</li>
+</ul>
+
+<h2>Sorulariniz mi var?</h2>
+<p>Bu islem hakkinda sorulariniz icin <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a> adresine yazin veya <a href="privacy-policy.html">Gizlilik Politikamizi</a> okuyun.</p>
+
+</div>
+</div>
+
+<!-- ==================== DEUTSCH ==================== -->
+<div class="lang-content" id="lang-de">
+<div class="card">
+
+<h2>Konto- und Datenloschung beantragen</h2>
+<p>Sie haben das Recht, die Loschung Ihres Kontos und aller von Namaz Vaktim gespeicherten zugehorigen Daten zu beantragen. Folgen Sie den untenstehenden Schritten, um einen Loschantrag zu stellen.</p>
+
+<div class="email-box">
+  <div class="label">Senden Sie Ihren Antrag an</div>
+  <a href="mailto:bayram.namazapp@gmail.com?subject=Konto-Loeschungsantrag">bayram.namazapp@gmail.com</a>
+</div>
+
+<h2>So beantragen Sie die Loschung</h2>
+<ol>
+  <li>Offnen Sie Ihren E-Mail-Client und schreiben Sie an <strong>bayram.namazapp@gmail.com</strong></li>
+  <li>Verwenden Sie als Betreff: <strong>"Konto-Loschungsantrag"</strong></li>
+  <li>Geben Sie im Text an:
+    <ul>
+      <li>Die zur Anmeldung in der App verwendete E-Mail-Adresse</li>
+      <li>Ihre Geräteplattform (iOS oder Android)</li>
+      <li>Bestatigung, dass Sie die Loschung aller Daten wunschen</li>
+    </ul>
+  </li>
+  <li>Senden Sie die E-Mail</li>
+</ol>
+
+<div class="info-box">
+  <strong>Antwortzeit:</strong> Wir werden Ihren Loschantrag innerhalb von 30 Tagen bearbeiten und Ihnen nach Abschluss eine Bestatigungs-E-Mail senden.
+</div>
+
+<h2>Was wird geloscht</h2>
+<p>Folgende mit Ihrem Konto verknupften Daten werden dauerhaft geloscht:</p>
+<ul>
+  <li>Kontoinformationen (E-Mail, Anzeigename, ggf. Foto-URL)</li>
+  <li>Mitgliedschaften in Gruppen-Zikr und von Ihnen beigetragene Inhalte</li>
+  <li>Mitgliedschaften in geteilten Khatm-Gruppen und gelesene Seiten</li>
+  <li>Antworten zur Frage des Tages und Antwortverlauf</li>
+  <li>Von Ihnen erstellte eigene Zikr-Eintrage</li>
+  <li>Aufzeichnungen zur Gebetsverfolgung (falls in die Cloud synchronisiert)</li>
+  <li>Erfolgsfortschritt</li>
+  <li>Alle anderen mit Ihrer Authentifizierungs-ID verknupften Daten</li>
+</ul>
+
+<h2>Was wird NICHT geloscht</h2>
+<ul>
+  <li>Bereits gesammelte anonymisierte Analytikdaten (konnen nicht mehr Ihnen zugeordnet werden)</li>
+  <li>Daten, die wir gesetzlich aufbewahren mussen (z. B. Transaktionsaufzeichnungen fur Steuerzwecke)</li>
+  <li>Ausschliesslich auf Ihrem Gerat gespeicherte lokale Daten — zum Loschen einfach die App deinstallieren</li>
+</ul>
+
+<h2>Alternative: Lokale Loschung</h2>
+<p>Wenn Sie nur Daten auf Ihrem Gerat entfernen mochten (ohne uns zu kontaktieren):</p>
+<ul>
+  <li><strong>iOS:</strong> Einstellungen &rarr; Allgemein &rarr; iPhone-Speicher &rarr; Namaz Vaktim &rarr; App loschen</li>
+  <li><strong>Android:</strong> Einstellungen &rarr; Apps &rarr; Namaz Vaktim &rarr; Speicher &rarr; Daten loschen, dann Deinstallieren</li>
+</ul>
+
+<div class="warn-box">
+  <strong>Hinweis:</strong> Das Deinstallieren der App entfernt lokale Daten, loscht jedoch keine in der Cloud gespeicherten Daten (z. B. geteilte Khatm-Gruppen, Antworten zur Frage des Tages). Fur eine vollstandige Loschung schreiben Sie uns bitte eine E-Mail.</div>
+
+<h2>Abonnement kundigen</h2>
+<p>Die Konto-Loschung kundigt aktive Abonnements <strong>nicht</strong> automatisch. Bitte separat kundigen:</p>
+<ul>
+  <li><strong>iOS:</strong> Einstellungen &rarr; [Ihr Name] &rarr; Abonnements &rarr; Namaz Vaktim Premium &rarr; Kundigen</li>
+  <li><strong>Android:</strong> Google Play &rarr; Profil &rarr; Zahlungen und Abonnements &rarr; Abonnements &rarr; Namaz Vaktim Premium &rarr; Kundigen</li>
+</ul>
+
+<h2>Fragen?</h2>
+<p>Bei Fragen zu diesem Vorgang kontaktieren Sie uns unter <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a> oder lesen Sie unsere <a href="privacy-policy.html">Datenschutzerklarung</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+  &copy; 2026 Bayram Gulac · <a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.querySelectorAll('.lang-tab').forEach(el => {
+      if (el.textContent.toLowerCase().startsWith(lang === 'tr' ? 'turk' : (lang === 'de' ? 'deut' : 'eng'))) {
+        el.classList.add('active');
+      }
+    });
+  }
+  // Auto-detect
+  (function() {
+    const browserLang = (navigator.language || 'en').toLowerCase();
+    if (browserLang.startsWith('tr')) setLang('tr');
+    else if (browserLang.startsWith('de')) setLang('de');
+  })();
+</script>
+
+</body>
+</html>
