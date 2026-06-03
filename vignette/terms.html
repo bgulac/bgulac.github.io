@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kullanım Koşulları – Vignette eSIM</title>
+  <title>Terms of Use – Vignette eSIM</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -12,6 +12,29 @@
       color: #1a1a2e;
       line-height: 1.7;
     }
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1e3a5f;
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px 20px;
+      gap: 6px;
+    }
+    .lang-btn {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active { background: rgba(255,255,255,0.35); }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
     header {
       background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
       color: white;
@@ -130,6 +153,7 @@
       color: #94a3b8;
       padding: 24px;
     }
+    footer a { color: #94a3b8; }
     @media (max-width: 600px) {
       section { padding: 20px 18px; }
       header h1 { font-size: 1.5rem; }
@@ -139,50 +163,54 @@
 </head>
 <body>
 
+<!-- Language switcher -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="switchLang('tr')">TR</button>
+  <button class="lang-btn" onclick="switchLang('en')">EN</button>
+  <button class="lang-btn" onclick="switchLang('de')">DE</button>
+  <button class="lang-btn" onclick="switchLang('fr')">FR</button>
+</div>
+
+<!-- ==================== TURKISH ==================== -->
+<div id="lang-tr" class="lang-section active">
 <header>
   <h1>📋 Kullanım Koşulları</h1>
   <p>Vignette eSIM — Avrupa Otoyol Vinyeti Hizmeti</p>
   <span class="badge">Son güncelleme: Haziran 2025</span>
 </header>
-
 <main>
-
-  <!-- TOC -->
   <div class="toc">
     <h2>İçindekiler</h2>
     <ol>
-      <li><a href="#s1">Önemli Uyarı</a></li>
-      <li><a href="#s2">Koşulların Kabulü</a></li>
-      <li><a href="#s3">Hizmet Açıklaması</a></li>
-      <li><a href="#s4">Desteklenen Ülkeler ve Resmi Kaynaklar</a></li>
-      <li><a href="#s5">Hizmet Ücreti</a></li>
-      <li><a href="#s6">Kullanıcı Sorumlulukları</a></li>
-      <li><a href="#s7">Satın Alma Zamanlaması</a></li>
-      <li><a href="#s8">Teslimat</a></li>
-      <li><a href="#s9">İade Politikası</a></li>
-      <li><a href="#s10">Premium Abonelik</a></li>
-      <li><a href="#s11">Sorumluluk Sınırları</a></li>
-      <li><a href="#s12">İletişim</a></li>
+      <li><a href="#tr-s1">Önemli Uyarı</a></li>
+      <li><a href="#tr-s2">Koşulların Kabulü</a></li>
+      <li><a href="#tr-s3">Hizmet Açıklaması</a></li>
+      <li><a href="#tr-s4">Desteklenen Ülkeler</a></li>
+      <li><a href="#tr-s5">Hizmet Ücreti</a></li>
+      <li><a href="#tr-s6">Kullanıcı Sorumlulukları</a></li>
+      <li><a href="#tr-s7">Satın Alma Zamanlaması</a></li>
+      <li><a href="#tr-s8">Teslimat</a></li>
+      <li><a href="#tr-s9">İade Politikası</a></li>
+      <li><a href="#tr-s10">Premium Abonelik</a></li>
+      <li><a href="#tr-s11">Sorumluluk Sınırları</a></li>
+      <li><a href="#tr-s12">İletişim</a></li>
     </ol>
   </div>
 
-  <!-- 1 -->
-  <section id="s1">
+  <section id="tr-s1">
     <h2><span class="num">1</span> Önemli Uyarı</h2>
     <div class="warning">
       ⚠️ <strong>Bu uygulama resmi bir devlet uygulaması DEĞİLDİR.</strong> Herhangi bir devlet kurumu veya karayolu altyapı kuruluşu ile bağlantılı, onaylanmış veya ilişkili değiliz. Resmi devlet web sitelerinden sizin adınıza otoyol vinyetleri satın alınmasını kolaylaştıran bağımsız bir üçüncü taraf hizmetiyiz.
     </div>
   </section>
 
-  <!-- 2 -->
-  <section id="s2">
+  <section id="tr-s2">
     <h2><span class="num">2</span> Koşulların Kabulü</h2>
     <p>Vignette eSIM uygulamasını indirerek, kaydolarak veya kullanarak bu Kullanım Koşullarını ve <a href="privacy.html">Gizlilik Politikamızı</a> kabul etmiş olursunuz.</p>
     <p>Bu koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayın.</p>
   </section>
 
-  <!-- 3 -->
-  <section id="s3">
+  <section id="tr-s3">
     <h2><span class="num">3</span> Hizmet Açıklaması</h2>
     <p>Vignette eSIM, Avrupa otoyol vinyetleri için <strong>ödeme kolaylaştırıcısı</strong> olarak hizmet vermektedir. Biz:</p>
     <ul>
@@ -195,8 +223,7 @@
     </div>
   </section>
 
-  <!-- 4 -->
-  <section id="s4">
+  <section id="tr-s4">
     <h2><span class="num">4</span> Desteklenen Ülkeler ve Resmi Kaynaklar</h2>
     <p>Tüm vinyet satın alımları aşağıdaki resmi devlet web siteleri üzerinden yapılmaktadır:</p>
     <div class="country-list">
@@ -213,15 +240,13 @@
     <p>Bu uygulamada gösterilen tüm fiyatlar, geçerlilik süreleri ve araç sınıflandırmaları doğrudan bu resmi web sitelerinden alınmaktadır.</p>
   </section>
 
-  <!-- 5 -->
-  <section id="s5">
+  <section id="tr-s5">
     <h2><span class="num">5</span> Hizmet Ücreti</h2>
     <p>Otomatik satın alma işlemlerinin kolaylığı için resmi vinyet fiyatına bir hizmet ücreti eklenmektedir. Güncel miktar ve oran ödeme sayfasında açıkça gösterilmektedir.</p>
     <p>Hizmet ücreti, işlem başarıyla tamamlanmasa dahi bazı durumlarda iade edilmeyebilir (bkz. Madde 9 – İade Politikası).</p>
   </section>
 
-  <!-- 6 -->
-  <section id="s6">
+  <section id="tr-s6">
     <h2><span class="num">6</span> Kullanıcı Sorumlulukları</h2>
     <p>Aşağıdaki bilgilerin doğruluğundan <strong>tamamen siz sorumlusunuz</strong>:</p>
     <ul>
@@ -237,8 +262,7 @@
     </div>
   </section>
 
-  <!-- 7 -->
-  <section id="s7">
+  <section id="tr-s7">
     <h2><span class="num">7</span> Satın Alma Zamanlaması</h2>
     <p>Vinyetinizi otobana veya ücretli yola <strong>girmeden ÖNCE</strong> satın almanız zorunludur.</p>
     <ul>
@@ -247,8 +271,7 @@
     </ul>
   </section>
 
-  <!-- 8 -->
-  <section id="s8">
+  <section id="tr-s8">
     <h2><span class="num">8</span> Teslimat</h2>
     <p>Vinyetiniz genellikle ödeme onayından sonra <strong>5 dakika</strong> içinde teslim edilir.</p>
     <ul>
@@ -258,8 +281,7 @@
     </ul>
   </section>
 
-  <!-- 9 -->
-  <section id="s9">
+  <section id="tr-s9">
     <h2><span class="num">9</span> İade Politikası</h2>
     <p>İade yalnızca aşağıdaki durumda yapılır:</p>
     <ul>
@@ -275,8 +297,7 @@
     </ul>
   </section>
 
-  <!-- 10 -->
-  <section id="s10">
+  <section id="tr-s10">
     <h2><span class="num">10</span> Premium Abonelik</h2>
     <p>Vignette eSIM, ek özelliklere erişim için isteğe bağlı otomatik yenilenen abonelik sunmaktadır.</p>
     <div class="sub-box">
@@ -291,8 +312,7 @@
     </div>
   </section>
 
-  <!-- 11 -->
-  <section id="s11">
+  <section id="tr-s11">
     <h2><span class="num">11</span> Sorumluluk Sınırları</h2>
     <p>Vignette eSIM aşağıdakilerden sorumlu tutulamaz:</p>
     <ul>
@@ -303,8 +323,7 @@
     </ul>
   </section>
 
-  <!-- 12 -->
-  <section id="s12">
+  <section id="tr-s12">
     <h2><span class="num">12</span> İletişim</h2>
     <p>Sorularınız veya şikâyetleriniz için:</p>
     <div class="contact-box">
@@ -312,12 +331,509 @@
       <small style="color:#64748b; margin-top:6px; display:block;">En hızlı yanıt için uygulama içi canlı destek sistemini kullanın.</small>
     </div>
   </section>
-
 </main>
+<footer>&copy; 2025 Vignette eSIM · <a href="privacy.html">Gizlilik Politikası</a></footer>
+</div>
 
-<footer>
-  &copy; 2025 Vignette eSIM · <a href="privacy.html" style="color:#94a3b8;">Gizlilik Politikası</a>
-</footer>
+<!-- ==================== ENGLISH ==================== -->
+<div id="lang-en" class="lang-section">
+<header>
+  <h1>📋 Terms of Use</h1>
+  <p>Vignette eSIM — European Highway Vignette Service</p>
+  <span class="badge">Last updated: June 2025</span>
+</header>
+<main>
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#en-s1">Important Disclaimer</a></li>
+      <li><a href="#en-s2">Acceptance of Terms</a></li>
+      <li><a href="#en-s3">Service Description</a></li>
+      <li><a href="#en-s4">Supported Countries</a></li>
+      <li><a href="#en-s5">Service Fee</a></li>
+      <li><a href="#en-s6">User Responsibilities</a></li>
+      <li><a href="#en-s7">Purchase Timing</a></li>
+      <li><a href="#en-s8">Delivery</a></li>
+      <li><a href="#en-s9">Refund Policy</a></li>
+      <li><a href="#en-s10">Premium Subscription</a></li>
+      <li><a href="#en-s11">Limitation of Liability</a></li>
+      <li><a href="#en-s12">Contact</a></li>
+    </ol>
+  </div>
 
+  <section id="en-s1">
+    <h2><span class="num">1</span> Important Disclaimer</h2>
+    <div class="warning">
+      ⚠️ <strong>This app is NOT an official government application.</strong> We are not affiliated with, endorsed by, or connected to any government authority or road infrastructure organization. We are an independent third-party service that facilitates the purchase of highway vignettes from official government websites on your behalf.
+    </div>
+  </section>
+
+  <section id="en-s2">
+    <h2><span class="num">2</span> Acceptance of Terms</h2>
+    <p>By downloading, registering, or using the Vignette eSIM app, you agree to these Terms of Use and our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p>If you do not agree to these terms, please do not use the app.</p>
+  </section>
+
+  <section id="en-s3">
+    <h2><span class="num">3</span> Service Description</h2>
+    <p>Vignette eSIM acts as a <strong>payment facilitator</strong> for European highway vignettes. We:</p>
+    <ul>
+      <li>Purchase vignettes on your behalf from official government websites</li>
+      <li>Are NOT a vignette dealer and do not represent any government body</li>
+      <li>Deliver the purchased vignette via email and in-app notification</li>
+    </ul>
+    <div class="info">
+      ℹ️ The automated vignette purchase feature is temporarily paused. Revenue is currently generated through premium subscriptions and advertising. The automation infrastructure is preserved and will be reactivated in a future update.
+    </div>
+  </section>
+
+  <section id="en-s4">
+    <h2><span class="num">4</span> Supported Countries and Official Sources</h2>
+    <p>All vignette purchases are made through the following official government websites:</p>
+    <div class="country-list">
+      <div class="country-item"><strong>🇦🇹 Austria</strong><span>shop.asfinag.at (ASFINAG)</span></div>
+      <div class="country-item"><strong>🇧🇬 Bulgaria</strong><span>bgtoll.bg (API BGTOLL)</span></div>
+      <div class="country-item"><strong>🇨🇿 Czech Republic</strong><span>edalnice.cz (EDALNICE)</span></div>
+      <div class="country-item"><strong>🇭🇺 Hungary</strong><span>nemzetiutdij.hu (NHKH)</span></div>
+      <div class="country-item"><strong>🇸🇰 Slovakia</strong><span>eznamka.sk (NDS a.s.)</span></div>
+      <div class="country-item"><strong>🇷🇴 Romania</strong><span>roviniete.ro (CNAIR)</span></div>
+      <div class="country-item"><strong>🇸🇮 Slovenia</strong><span>evinjeta.dars.si (DARS d.d.)</span></div>
+      <div class="country-item"><strong>🇲🇩 Moldova</strong><span>evinieta.gov.md (Guvernul RM)</span></div>
+      <div class="country-item"><strong>🇨🇭 Switzerland</strong><span>via.admin.ch (BAZG/OFDF)</span></div>
+    </div>
+    <p>All prices, validity periods, and vehicle classifications shown in this app are sourced directly from these official websites.</p>
+  </section>
+
+  <section id="en-s5">
+    <h2><span class="num">5</span> Service Fee</h2>
+    <p>A service fee is added to the official vignette price for the convenience of automated purchasing. The current amount and rate are clearly displayed on the payment screen.</p>
+    <p>The service fee may not be refunded in certain circumstances even if the transaction is not successfully completed (see Section 9 – Refund Policy).</p>
+  </section>
+
+  <section id="en-s6">
+    <h2><span class="num">6</span> User Responsibilities</h2>
+    <p>You are <strong>solely responsible</strong> for the accuracy of the following information:</p>
+    <ul>
+      <li>Correct and complete license plate number entry</li>
+      <li>Correct country selection</li>
+      <li>Correct vehicle type and weight class selection</li>
+      <li>Correct validity period selection</li>
+      <li>Correct validity start date selection</li>
+      <li>Purchasing the vignette <strong>BEFORE</strong> entering the motorway</li>
+    </ul>
+    <div class="warning">
+      ⚠️ Vignette eSIM cannot be held liable for invalid vignettes, fines, or other consequences resulting from incorrect or incomplete information provided by the user.
+    </div>
+  </section>
+
+  <section id="en-s7">
+    <h2><span class="num">7</span> Purchase Timing</h2>
+    <p>You must purchase your vignette <strong>BEFORE</strong> entering the motorway or toll road.</p>
+    <ul>
+      <li>Purchases made after entering the motorway are not retroactively valid</li>
+      <li>Vignette eSIM cannot be held liable for fines resulting from late purchase</li>
+    </ul>
+  </section>
+
+  <section id="en-s8">
+    <h2><span class="num">8</span> Delivery</h2>
+    <p>Your vignette is typically delivered within <strong>5 minutes</strong> of payment confirmation.</p>
+    <ul>
+      <li>Delivery is made via email, in-app notification, and the order screen</li>
+      <li>Delays may occur due to technical issues on official government websites</li>
+      <li>If your vignette is not delivered within 30 minutes, please contact us via in-app live support</li>
+    </ul>
+  </section>
+
+  <section id="en-s9">
+    <h2><span class="num">9</span> Refund Policy</h2>
+    <p>Refunds are only issued in the following case:</p>
+    <ul>
+      <li>If the vignette could not be purchased due to a technical error on our side and delivery did not occur</li>
+    </ul>
+    <p><strong>No refunds will be issued for:</strong></p>
+    <ul>
+      <li>Incorrect license plate number entered</li>
+      <li>Wrong country, vehicle type, or duration selected</li>
+      <li>Late purchase (entered motorway before buying)</li>
+      <li>Change of travel plans by the user</li>
+      <li>Unused vignettes (once the validity period has started)</li>
+    </ul>
+  </section>
+
+  <section id="en-s10">
+    <h2><span class="num">10</span> Premium Subscription</h2>
+    <p>Vignette eSIM offers an optional auto-renewing subscription for access to additional features.</p>
+    <div class="sub-box">
+      <ul style="list-style:none; padding:0;">
+        <li>💳 <strong>Pricing:</strong> Subscription plans and current prices are shown on the in-app purchase screen.</li>
+        <li style="margin-top:8px">🔄 <strong>Auto-Renewal:</strong> Your subscription automatically renews at the same price and conditions unless cancelled at least 24 hours before the end of the current period.</li>
+        <li style="margin-top:8px">💰 <strong>Payment:</strong> Charged to your App Store (iOS) or Google Play (Android) account at confirmation.</li>
+        <li style="margin-top:8px">❌ <strong>Cancel (iOS):</strong> Settings → Apple ID → Subscriptions</li>
+        <li style="margin-top:4px">❌ <strong>Cancel (Android):</strong> Google Play → Profile → Payments & subscriptions → Subscriptions</li>
+        <li style="margin-top:8px">ℹ️ Cancellation takes effect at the end of the current period. No refunds are issued for unused time.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="en-s11">
+    <h2><span class="num">11</span> Limitation of Liability</h2>
+    <p>Vignette eSIM cannot be held liable for:</p>
+    <ul>
+      <li>Technical issues, maintenance, or access restrictions on official government websites</li>
+      <li>Service outages by payment processors or other third-party providers</li>
+      <li>Fines or invalid vignettes resulting from incorrect information entered by the user</li>
+      <li>Delays caused by internet connectivity issues</li>
+    </ul>
+  </section>
+
+  <section id="en-s12">
+    <h2><span class="num">12</span> Contact</h2>
+    <p>For questions or complaints:</p>
+    <div class="contact-box">
+      📧 <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a><br/>
+      <small style="color:#64748b; margin-top:6px; display:block;">For the fastest response, use the in-app live support system.</small>
+    </div>
+  </section>
+</main>
+<footer>&copy; 2025 Vignette eSIM · <a href="privacy.html">Privacy Policy</a></footer>
+</div>
+
+<!-- ==================== GERMAN ==================== -->
+<div id="lang-de" class="lang-section">
+<header>
+  <h1>📋 Nutzungsbedingungen</h1>
+  <p>Vignette eSIM — Europäischer Autobahnvignetten-Service</p>
+  <span class="badge">Letzte Aktualisierung: Juni 2025</span>
+</header>
+<main>
+  <div class="toc">
+    <h2>Inhaltsverzeichnis</h2>
+    <ol>
+      <li><a href="#de-s1">Wichtiger Haftungsausschluss</a></li>
+      <li><a href="#de-s2">Annahme der Bedingungen</a></li>
+      <li><a href="#de-s3">Leistungsbeschreibung</a></li>
+      <li><a href="#de-s4">Unterstützte Länder</a></li>
+      <li><a href="#de-s5">Servicegebühr</a></li>
+      <li><a href="#de-s6">Nutzerverantwortlichkeiten</a></li>
+      <li><a href="#de-s7">Kaufzeitpunkt</a></li>
+      <li><a href="#de-s8">Lieferung</a></li>
+      <li><a href="#de-s9">Rückerstattungsrichtlinie</a></li>
+      <li><a href="#de-s10">Premium-Abonnement</a></li>
+      <li><a href="#de-s11">Haftungsbeschränkung</a></li>
+      <li><a href="#de-s12">Kontakt</a></li>
+    </ol>
+  </div>
+
+  <section id="de-s1">
+    <h2><span class="num">1</span> Wichtiger Haftungsausschluss</h2>
+    <div class="warning">
+      ⚠️ <strong>Diese App ist KEINE offizielle Regierungsanwendung.</strong> Wir sind mit keiner Regierungsbehörde oder Straßeninfrastrukturorganisation verbunden, von ihr genehmigt oder mit ihr assoziiert. Wir sind ein unabhängiger Drittanbieter, der den Kauf von Autobahnvignetten von offiziellen Regierungswebsites in Ihrem Namen erleichtert.
+    </div>
+  </section>
+
+  <section id="de-s2">
+    <h2><span class="num">2</span> Annahme der Bedingungen</h2>
+    <p>Durch das Herunterladen, die Registrierung oder Nutzung der Vignette eSIM App stimmen Sie diesen Nutzungsbedingungen und unserer <a href="privacy.html">Datenschutzrichtlinie</a> zu.</p>
+    <p>Wenn Sie diesen Bedingungen nicht zustimmen, verwenden Sie die App bitte nicht.</p>
+  </section>
+
+  <section id="de-s3">
+    <h2><span class="num">3</span> Leistungsbeschreibung</h2>
+    <p>Vignette eSIM fungiert als <strong>Zahlungsvermittler</strong> für europäische Autobahnvignetten. Wir:</p>
+    <ul>
+      <li>Kaufen Vignetten in Ihrem Namen von offiziellen Regierungswebsites</li>
+      <li>Sind KEIN Vignettenverkäufer und vertreten keine Regierungsbehörde</li>
+      <li>Liefern die gekaufte Vignette per E-Mail und In-App-Benachrichtigung</li>
+    </ul>
+    <div class="info">
+      ℹ️ Die automatisierte Vignettenkauf-Funktion ist vorübergehend pausiert. Der Umsatz wird derzeit durch Premium-Abonnements und Werbung generiert. Die Automatisierungsinfrastruktur bleibt erhalten und wird in einem zukünftigen Update reaktiviert.
+    </div>
+  </section>
+
+  <section id="de-s4">
+    <h2><span class="num">4</span> Unterstützte Länder und offizielle Quellen</h2>
+    <p>Alle Vignettenkäufe werden über folgende offizielle Regierungswebsites abgewickelt:</p>
+    <div class="country-list">
+      <div class="country-item"><strong>🇦🇹 Österreich</strong><span>shop.asfinag.at (ASFINAG)</span></div>
+      <div class="country-item"><strong>🇧🇬 Bulgarien</strong><span>bgtoll.bg (API BGTOLL)</span></div>
+      <div class="country-item"><strong>🇨🇿 Tschechien</strong><span>edalnice.cz (EDALNICE)</span></div>
+      <div class="country-item"><strong>🇭🇺 Ungarn</strong><span>nemzetiutdij.hu (NHKH)</span></div>
+      <div class="country-item"><strong>🇸🇰 Slowakei</strong><span>eznamka.sk (NDS a.s.)</span></div>
+      <div class="country-item"><strong>🇷🇴 Rumänien</strong><span>roviniete.ro (CNAIR)</span></div>
+      <div class="country-item"><strong>🇸🇮 Slowenien</strong><span>evinjeta.dars.si (DARS d.d.)</span></div>
+      <div class="country-item"><strong>🇲🇩 Moldau</strong><span>evinieta.gov.md (Guvernul RM)</span></div>
+      <div class="country-item"><strong>🇨🇭 Schweiz</strong><span>via.admin.ch (BAZG/OFDF)</span></div>
+    </div>
+    <p>Alle in dieser App angezeigten Preise, Gültigkeitszeiträume und Fahrzeugklassifizierungen stammen direkt von diesen offiziellen Websites.</p>
+  </section>
+
+  <section id="de-s5">
+    <h2><span class="num">5</span> Servicegebühr</h2>
+    <p>Zum offiziellen Vignettenpreis wird eine Servicegebühr für die Bequemlichkeit des automatisierten Kaufs hinzugefügt. Der aktuelle Betrag und Satz werden auf dem Zahlungsbildschirm klar angezeigt.</p>
+    <p>Die Servicegebühr kann unter bestimmten Umständen nicht erstattet werden, auch wenn die Transaktion nicht erfolgreich abgeschlossen wurde (siehe Abschnitt 9 – Rückerstattungsrichtlinie).</p>
+  </section>
+
+  <section id="de-s6">
+    <h2><span class="num">6</span> Nutzerverantwortlichkeiten</h2>
+    <p>Sie sind <strong>allein verantwortlich</strong> für die Richtigkeit folgender Informationen:</p>
+    <ul>
+      <li>Korrekte und vollständige Eingabe des Kennzeichens</li>
+      <li>Richtige Länderauswahl</li>
+      <li>Richtige Auswahl des Fahrzeugtyps und der Gewichtsklasse</li>
+      <li>Richtige Auswahl des Gültigkeitszeitraums</li>
+      <li>Richtiges Gültigkeitsstartdatum</li>
+      <li>Kauf der Vignette <strong>VOR</strong> der Einfahrt auf die Autobahn</li>
+    </ul>
+    <div class="warning">
+      ⚠️ Vignette eSIM haftet nicht für ungültige Vignetten, Bußgelder oder andere Folgen, die aus falschen oder unvollständigen Benutzerangaben resultieren.
+    </div>
+  </section>
+
+  <section id="de-s7">
+    <h2><span class="num">7</span> Kaufzeitpunkt</h2>
+    <p>Sie müssen Ihre Vignette <strong>VOR</strong> der Einfahrt auf die Autobahn oder Mautstraße kaufen.</p>
+    <ul>
+      <li>Nach der Einfahrt auf die Autobahn getätigte Käufe gelten nicht rückwirkend</li>
+      <li>Vignette eSIM haftet nicht für Bußgelder infolge verspäteter Käufe</li>
+    </ul>
+  </section>
+
+  <section id="de-s8">
+    <h2><span class="num">8</span> Lieferung</h2>
+    <p>Ihre Vignette wird in der Regel innerhalb von <strong>5 Minuten</strong> nach Zahlungsbestätigung geliefert.</p>
+    <ul>
+      <li>Die Lieferung erfolgt per E-Mail, In-App-Benachrichtigung und Bestellbildschirm</li>
+      <li>Verzögerungen durch technische Probleme auf offiziellen Regierungswebsites sind möglich</li>
+      <li>Wenn Ihre Vignette nicht innerhalb von 30 Minuten geliefert wird, kontaktieren Sie uns über den In-App-Live-Support</li>
+    </ul>
+  </section>
+
+  <section id="de-s9">
+    <h2><span class="num">9</span> Rückerstattungsrichtlinie</h2>
+    <p>Rückerstattungen werden nur in folgendem Fall gewährt:</p>
+    <ul>
+      <li>Wenn die Vignette aufgrund eines technischen Fehlers unsererseits nicht gekauft werden konnte und keine Lieferung erfolgte</li>
+    </ul>
+    <p><strong>Keine Rückerstattung bei:</strong></p>
+    <ul>
+      <li>Falsches Kennzeichen eingegeben</li>
+      <li>Falsches Land, Fahrzeugtyp oder Laufzeit gewählt</li>
+      <li>Verspäteter Kauf (Autobahn vor dem Kauf befahren)</li>
+      <li>Änderung der Reisepläne durch den Nutzer</li>
+      <li>Ungenutzte Vignetten (nach Beginn des Gültigkeitszeitraums)</li>
+    </ul>
+  </section>
+
+  <section id="de-s10">
+    <h2><span class="num">10</span> Premium-Abonnement</h2>
+    <p>Vignette eSIM bietet ein optionales automatisch verlängerndes Abonnement für den Zugang zu zusätzlichen Funktionen.</p>
+    <div class="sub-box">
+      <ul style="list-style:none; padding:0;">
+        <li>💳 <strong>Preise:</strong> Abonnementpläne und aktuelle Preise werden im In-App-Kaufbildschirm angezeigt.</li>
+        <li style="margin-top:8px">🔄 <strong>Automatische Verlängerung:</strong> Ihr Abonnement verlängert sich automatisch zu gleichen Konditionen, sofern es nicht mindestens 24 Stunden vor Ablauf des aktuellen Zeitraums gekündigt wird.</li>
+        <li style="margin-top:8px">💰 <strong>Zahlung:</strong> Wird bei Bestätigung von Ihrem App Store (iOS) oder Google Play (Android) Konto abgebucht.</li>
+        <li style="margin-top:8px">❌ <strong>Kündigung (iOS):</strong> Einstellungen → Apple ID → Abonnements</li>
+        <li style="margin-top:4px">❌ <strong>Kündigung (Android):</strong> Google Play → Profil → Zahlungen und Abonnements → Abonnements</li>
+        <li style="margin-top:8px">ℹ️ Die Kündigung tritt am Ende des aktuellen Zeitraums in Kraft. Rückerstattungen für nicht genutzte Zeit werden nicht gewährt.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="de-s11">
+    <h2><span class="num">11</span> Haftungsbeschränkung</h2>
+    <p>Vignette eSIM haftet nicht für:</p>
+    <ul>
+      <li>Technische Probleme, Wartung oder Zugangsbeschränkungen auf offiziellen Regierungswebsites</li>
+      <li>Serviceausfälle von Zahlungsabwicklern oder anderen Drittanbietern</li>
+      <li>Bußgelder oder ungültige Vignetten aufgrund falscher Benutzerangaben</li>
+      <li>Verzögerungen durch Internetverbindungsprobleme</li>
+    </ul>
+  </section>
+
+  <section id="de-s12">
+    <h2><span class="num">12</span> Kontakt</h2>
+    <p>Bei Fragen oder Beschwerden:</p>
+    <div class="contact-box">
+      📧 <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a><br/>
+      <small style="color:#64748b; margin-top:6px; display:block;">Für die schnellste Antwort nutzen Sie den In-App-Live-Support.</small>
+    </div>
+  </section>
+</main>
+<footer>&copy; 2025 Vignette eSIM · <a href="privacy.html">Datenschutzrichtlinie</a></footer>
+</div>
+
+<!-- ==================== FRENCH ==================== -->
+<div id="lang-fr" class="lang-section">
+<header>
+  <h1>📋 Conditions d'Utilisation</h1>
+  <p>Vignette eSIM — Service de vignette autoroutière européenne</p>
+  <span class="badge">Dernière mise à jour : Juin 2025</span>
+</header>
+<main>
+  <div class="toc">
+    <h2>Table des matières</h2>
+    <ol>
+      <li><a href="#fr-s1">Avertissement important</a></li>
+      <li><a href="#fr-s2">Acceptation des conditions</a></li>
+      <li><a href="#fr-s3">Description du service</a></li>
+      <li><a href="#fr-s4">Pays pris en charge</a></li>
+      <li><a href="#fr-s5">Frais de service</a></li>
+      <li><a href="#fr-s6">Responsabilités de l'utilisateur</a></li>
+      <li><a href="#fr-s7">Moment d'achat</a></li>
+      <li><a href="#fr-s8">Livraison</a></li>
+      <li><a href="#fr-s9">Politique de remboursement</a></li>
+      <li><a href="#fr-s10">Abonnement Premium</a></li>
+      <li><a href="#fr-s11">Limitation de responsabilité</a></li>
+      <li><a href="#fr-s12">Contact</a></li>
+    </ol>
+  </div>
+
+  <section id="fr-s1">
+    <h2><span class="num">1</span> Avertissement important</h2>
+    <div class="warning">
+      ⚠️ <strong>Cette application N'EST PAS une application gouvernementale officielle.</strong> Nous ne sommes affiliés à, approuvés par, ni associés à aucune autorité gouvernementale ou organisation d'infrastructure routière. Nous sommes un service tiers indépendant qui facilite l'achat de vignettes autoroutières depuis des sites gouvernementaux officiels en votre nom.
+    </div>
+  </section>
+
+  <section id="fr-s2">
+    <h2><span class="num">2</span> Acceptation des conditions</h2>
+    <p>En téléchargeant, vous inscrivant ou utilisant l'application Vignette eSIM, vous acceptez ces Conditions d'Utilisation et notre <a href="privacy.html">Politique de Confidentialité</a>.</p>
+    <p>Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
+  </section>
+
+  <section id="fr-s3">
+    <h2><span class="num">3</span> Description du service</h2>
+    <p>Vignette eSIM agit comme <strong>facilitateur de paiement</strong> pour les vignettes autoroutières européennes. Nous :</p>
+    <ul>
+      <li>Achetons des vignettes en votre nom depuis les sites gouvernementaux officiels</li>
+      <li>NE SOMMES PAS un revendeur de vignettes et ne représentons aucun organisme gouvernemental</li>
+      <li>Livrons la vignette achetée par e-mail et notification in-app</li>
+    </ul>
+    <div class="info">
+      ℹ️ La fonctionnalité d'achat automatisé de vignettes est temporairement suspendue. Les revenus sont actuellement générés par les abonnements premium et la publicité. L'infrastructure d'automatisation est préservée et sera réactivée dans une prochaine mise à jour.
+    </div>
+  </section>
+
+  <section id="fr-s4">
+    <h2><span class="num">4</span> Pays pris en charge et sources officielles</h2>
+    <p>Tous les achats de vignettes sont effectués via les sites gouvernementaux officiels suivants :</p>
+    <div class="country-list">
+      <div class="country-item"><strong>🇦🇹 Autriche</strong><span>shop.asfinag.at (ASFINAG)</span></div>
+      <div class="country-item"><strong>🇧🇬 Bulgarie</strong><span>bgtoll.bg (API BGTOLL)</span></div>
+      <div class="country-item"><strong>🇨🇿 Tchéquie</strong><span>edalnice.cz (EDALNICE)</span></div>
+      <div class="country-item"><strong>🇭🇺 Hongrie</strong><span>nemzetiutdij.hu (NHKH)</span></div>
+      <div class="country-item"><strong>🇸🇰 Slovaquie</strong><span>eznamka.sk (NDS a.s.)</span></div>
+      <div class="country-item"><strong>🇷🇴 Roumanie</strong><span>roviniete.ro (CNAIR)</span></div>
+      <div class="country-item"><strong>🇸🇮 Slovénie</strong><span>evinjeta.dars.si (DARS d.d.)</span></div>
+      <div class="country-item"><strong>🇲🇩 Moldavie</strong><span>evinieta.gov.md (Guvernul RM)</span></div>
+      <div class="country-item"><strong>🇨🇭 Suisse</strong><span>via.admin.ch (BAZG/OFDF)</span></div>
+    </div>
+    <p>Tous les prix, durées de validité et classifications de véhicules affichés dans cette application proviennent directement de ces sites officiels.</p>
+  </section>
+
+  <section id="fr-s5">
+    <h2><span class="num">5</span> Frais de service</h2>
+    <p>Des frais de service sont ajoutés au prix officiel de la vignette pour la commodité de l'achat automatisé. Le montant et le taux actuels sont clairement indiqués sur l'écran de paiement.</p>
+    <p>Les frais de service peuvent ne pas être remboursés dans certaines circonstances même si la transaction n'a pas été menée à bien (voir Section 9 – Politique de remboursement).</p>
+  </section>
+
+  <section id="fr-s6">
+    <h2><span class="num">6</span> Responsabilités de l'utilisateur</h2>
+    <p>Vous êtes <strong>seul responsable</strong> de l'exactitude des informations suivantes :</p>
+    <ul>
+      <li>Saisie correcte et complète du numéro d'immatriculation</li>
+      <li>Sélection correcte du pays</li>
+      <li>Sélection correcte du type de véhicule et de la classe de poids</li>
+      <li>Sélection correcte de la durée de validité</li>
+      <li>Sélection correcte de la date de début de validité</li>
+      <li>Achat de la vignette <strong>AVANT</strong> d'entrer sur l'autoroute</li>
+    </ul>
+    <div class="warning">
+      ⚠️ Vignette eSIM ne peut être tenu responsable des vignettes invalides, amendes ou autres conséquences résultant d'informations incorrectes ou incomplètes fournies par l'utilisateur.
+    </div>
+  </section>
+
+  <section id="fr-s7">
+    <h2><span class="num">7</span> Moment d'achat</h2>
+    <p>Vous devez acheter votre vignette <strong>AVANT</strong> d'entrer sur l'autoroute ou la route à péage.</p>
+    <ul>
+      <li>Les achats effectués après être entré sur l'autoroute ne sont pas valables rétroactivement</li>
+      <li>Vignette eSIM ne peut être tenu responsable des amendes résultant d'un achat tardif</li>
+    </ul>
+  </section>
+
+  <section id="fr-s8">
+    <h2><span class="num">8</span> Livraison</h2>
+    <p>Votre vignette est généralement livrée dans les <strong>5 minutes</strong> suivant la confirmation du paiement.</p>
+    <ul>
+      <li>La livraison s'effectue par e-mail, notification in-app et écran de commande</li>
+      <li>Des retards peuvent survenir en raison de problèmes techniques sur les sites gouvernementaux officiels</li>
+      <li>Si votre vignette n'est pas livrée dans les 30 minutes, contactez-nous via le support en direct in-app</li>
+    </ul>
+  </section>
+
+  <section id="fr-s9">
+    <h2><span class="num">9</span> Politique de remboursement</h2>
+    <p>Les remboursements ne sont accordés que dans le cas suivant :</p>
+    <ul>
+      <li>Si la vignette n'a pas pu être achetée en raison d'une erreur technique de notre côté et que la livraison n'a pas eu lieu</li>
+    </ul>
+    <p><strong>Aucun remboursement ne sera effectué pour :</strong></p>
+    <ul>
+      <li>Numéro d'immatriculation incorrect saisi</li>
+      <li>Mauvais pays, type de véhicule ou durée sélectionné</li>
+      <li>Achat tardif (autoroute empruntée avant l'achat)</li>
+      <li>Changement de plans de voyage par l'utilisateur</li>
+      <li>Vignettes inutilisées (une fois la période de validité commencée)</li>
+    </ul>
+  </section>
+
+  <section id="fr-s10">
+    <h2><span class="num">10</span> Abonnement Premium</h2>
+    <p>Vignette eSIM propose un abonnement optionnel à renouvellement automatique pour accéder à des fonctionnalités supplémentaires.</p>
+    <div class="sub-box">
+      <ul style="list-style:none; padding:0;">
+        <li>💳 <strong>Tarification :</strong> Les plans d'abonnement et les prix actuels sont affichés sur l'écran d'achat in-app.</li>
+        <li style="margin-top:8px">🔄 <strong>Renouvellement automatique :</strong> Votre abonnement se renouvelle automatiquement aux mêmes conditions sauf annulation au moins 24 heures avant la fin de la période en cours.</li>
+        <li style="margin-top:8px">💰 <strong>Paiement :</strong> Débité sur votre compte App Store (iOS) ou Google Play (Android) à la confirmation.</li>
+        <li style="margin-top:8px">❌ <strong>Annulation (iOS) :</strong> Réglages → Identifiant Apple → Abonnements</li>
+        <li style="margin-top:4px">❌ <strong>Annulation (Android) :</strong> Google Play → Profil → Paiements et abonnements → Abonnements</li>
+        <li style="margin-top:8px">ℹ️ L'annulation prend effet à la fin de la période en cours. Aucun remboursement n'est accordé pour le temps non utilisé.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fr-s11">
+    <h2><span class="num">11</span> Limitation de responsabilité</h2>
+    <p>Vignette eSIM ne peut être tenu responsable de :</p>
+    <ul>
+      <li>Problèmes techniques, maintenance ou restrictions d'accès sur les sites gouvernementaux officiels</li>
+      <li>Interruptions de service des processeurs de paiement ou autres fournisseurs tiers</li>
+      <li>Amendes ou vignettes invalides résultant d'informations incorrectes saisies par l'utilisateur</li>
+      <li>Retards causés par des problèmes de connexion Internet</li>
+    </ul>
+  </section>
+
+  <section id="fr-s12">
+    <h2><span class="num">12</span> Contact</h2>
+    <p>Pour toute question ou réclamation :</p>
+    <div class="contact-box">
+      📧 <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a><br/>
+      <small style="color:#64748b; margin-top:6px; display:block;">Pour la réponse la plus rapide, utilisez le système de support en direct in-app.</small>
+    </div>
+  </section>
+</main>
+<footer>&copy; 2025 Vignette eSIM · <a href="privacy.html">Politique de Confidentialité</a></footer>
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
 </body>
 </html>
