@@ -1,6 +1,7 @@
 # app-ads.txt - Authorized Digital Sellers
 # Owner: Bayram Gulac (bgulac.github.io)
-# App: Namaz Vakti (com.bayramgulac.namazvakti)
+# Apps: Namaz Vakti (com.bayramgulac.namazvakti)
+#        Vignette eSIM (com.silayolum.vignette)
 
 # --- AdMob (Direct) ---
 google.com, pub-7339051964442321, DIRECT, f08c47fec0942fa0
