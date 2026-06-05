@@ -5,6 +5,7 @@
 
 # --- AdMob (Direct) ---
 google.com, pub-7339051964442321, DIRECT, f08c47fec0942fa0
+google.com, pub-3245197636889530, DIRECT, f08c47fec0942fa0
 
 # --- Unity Ads + Mediation Partners ---
 adagio.io, 1522, RESELLER
