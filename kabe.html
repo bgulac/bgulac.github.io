@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <title>Canlı Yayın — Namaz Vaktim</title>
+  <!--
+    Namaz Vaktim uygulamasinin Kabe/Mescid-i Nebevi canli yayin sayfasi.
+    Uygulama WebView'i bu sayfayi acar; sayfa resmi Saudi Broadcasting
+    Authority YouTube kanallarinin canli yayinini STANDART YouTube embed
+    player ile gomer (YouTube ToS "License to Other Users" kapsaminda
+    lisansli kullanim — kanal sahibi embed'i acik birakmistir).
+
+    Neden bu sayfa var: YouTube embed'leri artik gecerli bir web-origin +
+    Referer ister (dogrudan WebView yuklemeleri Error 153 verir). Gercek
+    bir siteden (bgulac.github.io) servis edilen iframe, tarayicidaki
+    normal bir embed ile birebir ayni kosullarda calisir.
+
+    Kullanim: kabe.html?v=VIDEO_ID  (11 karakterlik YouTube video ID)
+  -->
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+    iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .err { color: #fff; font-family: -apple-system, sans-serif; text-align: center;
+           position: absolute; top: 45%; width: 100%; }
+  </style>
+</head>
+<body>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      // Video ID sanitize: sadece YouTube ID alfabesi, max 11 karakter
+      var v = (p.get('v') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 11);
+      if (v.length === 11) {
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + v +
+          '?autoplay=1&playsinline=1&mute=1&rel=0&modestbranding=1&controls=1';
+        f.setAttribute('allow',
+          'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+        f.setAttribute('allowfullscreen', '');
+        document.body.appendChild(f);
+      } else {
+        var d = document.createElement('div');
+        d.className = 'err';
+        d.textContent = 'Video bulunamadı';
+        document.body.appendChild(d);
+      }
+    })();
+  </script>
+  <noscript><div class="err">JavaScript gerekli</div></noscript>
+</body>
+</html>
