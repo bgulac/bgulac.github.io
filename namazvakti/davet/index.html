@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namaz Vakti - Davet</title>
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bgulac.github.io/namazvakti/davet">
+  <meta property="og:title" content="Namaz Vakti'ye Davetlisin">
+  <meta property="og:description" content="Namaz Vakitleri, Ezan & Hatırlatıcı — App Store ve Google Play'de ücretsiz.">
+  <meta property="og:image" content="https://bgulac.github.io/namazvakti/og-image.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:locale" content="tr_TR">
+
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 500px; margin: 60px auto; padding: 20px; text-align: center; color: #333; background: #f9f9f9; }
+    h1 { color: #0097A7; font-size: 24px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    .btn { display: block; padding: 16px 24px; margin: 12px auto; border-radius: 12px; text-decoration: none; color: white; font-size: 18px; font-weight: bold; max-width: 300px; }
+    .ios { background: #007AFF; }
+    .android { background: #34A853; }
+    .btn:hover { opacity: 0.9; }
+    .icon { font-size: 48px; margin-bottom: 10px; }
+    .redirect-msg { color: #999; font-size: 13px; margin-top: 30px; }
+  </style>
+  <script>
+    // Davet click sinyali — matchReferralInstall Cloud Function'in eslesmesi
+    // icin gereken cihaz "parmak izi" (bkz. functions/src/referral.ts,
+    // memory: referral_system.md madde B). Deferred deep link YOK — magaza
+    // gecisinde URL parametresi kaybolur, bu yuzden uygulama ilk acilista
+    // AYNI sinyalleri gonderip son 1 saatteki click'lerle eslesir.
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var code = (params.get('ref') || '').trim();
+
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /android/i.test(ua);
+      var platform = isIOS ? 'ios' : (isAndroid ? 'android' : 'other');
+
+      var storeUrl = isIOS
+        ? 'https://apps.apple.com/app/id6759039673'
+        : 'https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti';
+
+      function redirect() {
+        if (isIOS || isAndroid) {
+          window.location.href = storeUrl;
+        }
+      }
+
+      if (!/^[A-Za-z0-9]{6,10}$/.test(code)) {
+        // Gecersiz/eksik kod — sinyal gondermeden dogrudan magazaya yonlendir.
+        redirect();
+        return;
+      }
+
+      var tz = '';
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+
+      // window.screen.width/height CSS (mantiksal) piksel dondurur — uygulama
+      // tarafi da fiziksel boyutu devicePixelRatio'ya bolup ayni birimi
+      // gonderiyor (bkz. referral_service.dart _collectSignals).
+      var payload = {
+        data: {
+          code: code,
+          screenW: Math.round(window.screen.width),
+          screenH: Math.round(window.screen.height),
+          lang: navigator.language || '',
+          tz: tz,
+          platform: platform,
+        },
+      };
+
+      var url = 'https://europe-west1-namaz-vaktim-f953f.cloudfunctions.net/logReferralClick';
+
+      var sent = false;
+      function sendAndRedirect() {
+        if (sent) return;
+        sent = true;
+        redirect();
+      }
+
+      try {
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true,
+        }).catch(function () {}).finally(sendAndRedirect);
+      } catch (e) {
+        sendAndRedirect();
+      }
+
+      // Fetch cok yavas kalirsa da yonlendirme kullaniciyi bekletmesin.
+      setTimeout(sendAndRedirect, 1500);
+    })();
+  </script>
+</head>
+<body>
+  <div class="icon">🕌</div>
+  <h1>Namaz Vakti'ye Davetlisin</h1>
+  <p class="subtitle">Bir arkadaşın seni davet etti — Namaz Vakitleri, Ezan & Hatırlatıcı, ücretsiz.</p>
+
+  <a class="btn ios" href="https://apps.apple.com/app/id6759039673">
+    🍎 App Store'dan Indir
+  </a>
+
+  <a class="btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">
+    🤖 Google Play'den Indir
+  </a>
+
+  <p class="redirect-msg">Otomatik yonlendirilmediyseniz yukaridaki butonlara tiklayiniz.</p>
+</body>
+</html>
