@@ -1,0 +1,16 @@
+# Namaz Vaktim
+
+> Namaz Vaktim (Namaz Vaktim: Ezan, Kuran) is a prayer-times and worship app for Muslims in Turkey and Europe (iPhone and Android; Turkish, German, English). It uses Diyanet prayer-time tables (Turkey and Europe), and includes adhan, qibla, Quran, makruh (kerahat) times, missed-prayer and fasting tracking, and the AI assistant "AI Hoca", which answers with cited sources and can set up app settings after the user confirms. It is not a source of religious rulings.
+
+## Pages
+- [Türkçe ana sayfa](https://bgulac.github.io/): özellikler ve sık sorulan sorular
+- [Deutsch](https://bgulac.github.io/de/): Funktionen und häufige Fragen
+- [Kerahat vakitleri](https://bgulac.github.io/kerahat-vakitleri/): kerahat vakitleri nedir, uygulamada nasıl gösterilir
+- [Kaza namazı hesaplama](https://bgulac.github.io/kaza-namazi-hesaplama/): kaza borcu hesabı ve takibi
+
+## Downloads
+- [App Store](https://apps.apple.com/app/id6759039673)
+- [Google Play](https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti)
+
+## Contact
+- bayram.namazapp@gmail.com

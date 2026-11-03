@@ -1,214 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Namaz Vaktim: Ezan, Kuran</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; background: #f5f7fa; }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #0097A7 0%, #00796B 100%);
-      color: white; text-align: center; padding: 60px 20px 50px;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Namaz Vaktim: Ezan, Kuran — Namaz Vakitleri, Kıble, Kaza Takibi, AI Hoca</title>
+<meta name="description" content="Namaz Vaktim: Türkiye ve Avrupa için Diyanet vakitleriyle ezan, kıble, Kur'an, kerahat vakitleri, kaza ve oruç takibi. AI Hoca kaynaklı cevap verir. iPhone ve Android.">
+<link rel="canonical" href="https://bgulac.github.io/">
+<link rel="alternate" hreflang="tr" href="https://bgulac.github.io/">
+<link rel="alternate" hreflang="de" href="https://bgulac.github.io/de/">
+<link rel="alternate" hreflang="x-default" href="https://bgulac.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Namaz Vaktim: Ezan, Kuran">
+<meta property="og:description" content="Diyanet vakitleri, ezan, kıble, Kur'an, kerahat vakitleri, kaza ve oruç takibi, AI Hoca.">
+<meta property="og:url" content="https://bgulac.github.io/">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://bgulac.github.io/namazvakti/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Namaz Vaktim",
+      "alternateName": "Namaz Vaktim: Ezan, Kuran",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android",
+      "inLanguage": ["tr", "de", "en"],
+      "description": "Diyanet vakitleriyle ezan ve namaz vakitleri, kıble, Kur'an, kerahat vakitleri, kaza ve oruç takibi ile kaynaklı cevap veren yapay zekâ asistanı AI Hoca.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+      "downloadUrl": ["https://apps.apple.com/app/id6759039673", "https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti"],
+      "author": { "@type": "Person", "name": "Bayram Gülaç" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Namaz Vaktim hangi hesaplama yöntemini kullanıyor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Türkiye için Diyanet İşleri Başkanlığı vakit tablosu, Avrupa için Diyanet Avrupa tablosu varsayılandır. Ayarlardan Mekke Ümmü'l-Kurâ, Mısır, Karaçi, Tahran gibi diğer yöntemler de seçilebilir." } },
+        { "@type": "Question", "name": "Almanya'da kullanabilir miyim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Evet. Konumun Avrupa'daysa Diyanet Avrupa vakitleri otomatik seçilir. Uygulama Türkçe, Almanca ve İngilizce arayüz sunar." } },
+        { "@type": "Question", "name": "Kerahat vakitleri uygulamada nasıl gösteriliyor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "İstersen Ayarlar'dan açılır: güneşin doğuşundan sonra, öğleden hemen önce (istiva) ve gün batımından önceki süreler Saat görünümünde kırmızı dilim olarak, Liste ve Tablo görünümünde saat aralığı olarak gösterilir. Süreler ayarlanabilir; dinî hüküm yerine geçmez." } },
+        { "@type": "Question", "name": "Kaza namazı borcumu nasıl hesaplarım?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kaza Namazı sayfasında her vakit için borç sayılarını kaydedersin; her kıldığında bir azalır. AI Hoca'ya 'son 5 yıldır namaz kılmadım' dediğinde süreyi gün sayısına çevirip onayınla kaydedebilir." } },
+        { "@type": "Question", "name": "AI Hoca nedir?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Diyanet fetvaları, hadis ve dua kaynakları ile Kur'an meali üzerinden kaynak göstererek cevap veren yapay zekâ asistanıdır. Hata yapabilir; önemli dinî kararlar için güvendiğin bir din âlimine veya imama danışmalısın." } },
+        { "@type": "Question", "name": "Uygulama ücretsiz mi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Temel özellikler ücretsizdir ve reklam içerir. Reklamsız deneyim ve ek sesler gibi özellikler opsiyonel premium aboneliktedir." } }
+      ]
     }
-    .hero-icon { font-size: 64px; margin-bottom: 12px; }
-    .hero h1 { font-size: 32px; margin-bottom: 8px; }
-    .hero p { font-size: 16px; opacity: 0.9; max-width: 400px; margin: 0 auto; }
-
-    /* Language Tabs */
-    .lang-tabs { text-align: center; padding: 16px 0 0; background: #fff; border-bottom: 1px solid #e0e0e0; }
-    .lang-tab { display: inline-block; padding: 10px 24px; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; transition: all 0.2s; }
-    .lang-tab.active { color: #0097A7; border-bottom-color: #0097A7; }
-    .lang-tab:hover { color: #0097A7; }
-
-    /* Content */
-    .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-    .lang-content { display: none; }
-    .lang-content.active { display: block; }
-
-    /* Features */
-    .features { padding: 40px 0; }
-    .features h2 { text-align: center; font-size: 22px; margin-bottom: 24px; color: #00796B; }
-    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .feature-card {
-      background: white; border-radius: 12px; padding: 20px; text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s;
-    }
-    .feature-card:hover { transform: translateY(-2px); }
-    .feature-icon { font-size: 32px; margin-bottom: 8px; }
-    .feature-card h3 { font-size: 14px; color: #333; margin-bottom: 4px; }
-    .feature-card p { font-size: 12px; color: #888; }
-
-    /* Download */
-    .download { text-align: center; padding: 40px 0; }
-    .download h2 { font-size: 22px; margin-bottom: 20px; color: #00796B; }
-    .store-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .store-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 28px; border-radius: 12px; text-decoration: none;
-      color: white; font-size: 16px; font-weight: 600; transition: opacity 0.2s;
-    }
-    .store-btn:hover { opacity: 0.9; }
-    .store-btn.ios { background: #007AFF; }
-    .store-btn.android { background: #34A853; }
-
-    /* Support */
-    .support {
-      background: white; border-radius: 12px; padding: 30px; margin: 0 0 40px;
-      text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .support h2 { font-size: 20px; margin-bottom: 12px; color: #00796B; }
-    .support a { color: #0097A7; font-size: 18px; font-weight: 600; text-decoration: none; }
-    .support a:hover { text-decoration: underline; }
-
-    /* Footer */
-    footer {
-      background: #263238; color: #aaa; text-align: center; padding: 24px 20px;
-      font-size: 13px;
-    }
-    footer a { color: #4DB6AC; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { margin-bottom: 8px; }
-    .footer-links a { margin: 0 12px; }
-
-    @media (max-width: 480px) {
-      .feature-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 26px; }
-    }
-  </style>
+  ]
+}
+</script>
+<style>
+:root{--teal:#00796B;--bg:#f6faf9;--ink:#1c2b29}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.8rem;line-height:1.2;color:var(--teal)}h2{margin-top:2rem;color:var(--teal)}
+.btn{display:inline-block;margin:6px 8px 6px 0;padding:12px 18px;border-radius:12px;background:var(--teal);color:#fff;text-decoration:none;font-weight:700}
+nav a{margin-right:12px}footer{margin-top:3rem;font-size:.9rem;color:#556}details{background:#fff;border:1px solid #d6e5e2;border-radius:10px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600}
+@media (prefers-color-scheme:dark){:root{--bg:#101615;--ink:#e6efed;--teal:#4db6ac}details{background:#18211f;border-color:#2c3a37}}
+</style>
 </head>
 <body>
+<main>
+<nav><a href="/">Türkçe</a><a href="/de/">Deutsch</a></nav>
+<h1>Namaz Vaktim: Ezan, Kuran</h1>
+<p><strong>Namaz Vaktim</strong>, Türkiye ve Avrupa'daki Müslümanlar için hazırlanmış bir namaz vakitleri ve ibadet uygulamasıdır. Diyanet vakit tablolarıyla ezan, kıble, Kur'an, kerahat vakitleri, kaza ve oruç takibi ve kaynak göstererek cevap veren <strong>AI Hoca</strong> tek uygulamada. iPhone ve Android için.</p>
+<p>
+<a class="btn" href="https://apps.apple.com/app/id6759039673">App Store'dan indir</a>
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">Google Play'den indir</a>
+</p>
 
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-icon">🕌</div>
-  <h1>Namaz Vaktim</h1>
-  <p id="heroSubtitle">Namaz Vakitleri, Kur'an, Kible Pusulasi ve daha fazlasi</p>
-</div>
+<h2>Neler var?</h2>
+<ul>
+<li><strong>Namaz vakitleri ve ezan:</strong> Günlük, haftalık ve aylık vakitler; her vakit için ezan ve hatırlatıcı; ana ekran widget'ları.</li>
+<li><strong>Diyanet vakitleri:</strong> Türkiye ve Avrupa için Diyanet tablosu; konumunu otomatik bulur, istersen şehri elle seçersin.</li>
+<li><strong>Kıble:</strong> Harita, pusula veya kamera ile.</li>
+<li><strong>Kur'an-ı Kerim:</strong> Tecvid renkli mushaf, sesli dinleme, meal ve tefsir özetleri.</li>
+<li><strong>Kerahat vakitleri:</strong> İstersen Saat görünümünde kırmızı dilim olarak görürsün.</li>
+<li><strong>Kaza ve oruç takibi:</strong> Kaza borcunu vakit vakit takip et; oruç borcunu yıllara göre kaydet.</li>
+<li><strong>AI Hoca:</strong> Diyanet fetvaları, hadis, dua ve Kur'an meali kaynaklarından cevap verir; onayınla ezan, hatırlatıcı ve kaza gibi ayarları senin yerine yapar.</li>
+<li><strong>Günün sorusu, başarımlar ve liderlik tablosu.</strong></li>
+</ul>
 
-<!-- Language Tabs -->
-<div class="lang-tabs">
-  <span class="lang-tab active" onclick="setLang('tr')">Turkce</span>
-  <span class="lang-tab" onclick="setLang('en')">English</span>
-  <span class="lang-tab" onclick="setLang('de')">Deutsch</span>
-</div>
+<h2>Almanya ve Avrupa'da yaşayanlar için</h2>
+<p>Konumun Avrupa'daysa <strong>Diyanet Avrupa</strong> vakitleri otomatik seçilir; Almanya'daki şehirler için ayrıca şehir seçebilirsin. Arayüz Türkçe, Almanca ve İngilizce. Almanca sayfa: <a href="/de/">Namaz Vaktim — Gebetszeiten</a>.</p>
 
-<div class="container">
+<h2>Sık sorulan sorular</h2>
+<details open><summary>Namaz Vaktim hangi hesaplama yöntemini kullanıyor?</summary><p>Türkiye için Diyanet İşleri Başkanlığı vakit tablosu, Avrupa için Diyanet Avrupa tablosu varsayılandır. Ayarlardan Mekke Ümmü'l-Kurâ, Mısır, Karaçi, Tahran gibi diğer yöntemler de seçilebilir.</p></details>
+<details><summary>Almanya'da kullanabilir miyim?</summary><p>Evet. Konumun Avrupa'daysa Diyanet Avrupa vakitleri otomatik seçilir. Arayüz Türkçe, Almanca ve İngilizce.</p></details>
+<details><summary>Kerahat vakitleri uygulamada nasıl gösteriliyor?</summary><p>İstersen Ayarlar'dan açılır. Güneşin doğuşundan sonraki, öğleden hemen önceki (istiva) ve gün batımından önceki süreler Saat görünümünde kırmızı dilim, Liste ve Tablo görünümünde saat aralığı olarak gösterilir. Süreler ayarlanabilir; dinî hüküm yerine geçmez. <a href="/kerahat-vakitleri/">Ayrıntı</a></p></details>
+<details><summary>Kaza namazı borcumu nasıl hesaplarım?</summary><p>Kaza Namazı sayfasında her vakit için borç sayılarını kaydedersin; her kıldığında bir azalır. <a href="/kaza-namazi-hesaplama/">Ayrıntı</a></p></details>
+<details><summary>AI Hoca nedir?</summary><p>Kaynak göstererek cevap veren yapay zekâ asistanıdır. Hata yapabilir; önemli dinî kararlar için güvendiğin bir din âlimine veya imama danış.</p></details>
+<details><summary>Uygulama ücretsiz mi?</summary><p>Temel özellikler ücretsizdir ve reklam içerir. Reklamsız deneyim ve ek sesler gibi özellikler opsiyonel premium aboneliktedir.</p></details>
 
-  <!-- TR -->
-  <div class="lang-content active" id="lang-tr">
-    <div class="features">
-      <h2>Ozellikler</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Namaz Vakitleri</h3><p>Gunluk, haftalik ve aylik namaz vakitleri</p></div>
-        <div class="feature-card"><div class="feature-icon">📖</div><h3>Kur'an-i Kerim</h3><p>114 sure, sesli dinleme ozelligi</p></div>
-        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Kible Pusulasi</h3><p>Hassas kible yonu ve kalibrasyon</p></div>
-        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Dualar</h3><p>10 kategori, 22 dua Arapca ve anlami</p></div>
-        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Ezan Bildirimi</h3><p>Sesli ezan ve hatirlatici alarmlar</p></div>
-        <div class="feature-card"><div class="feature-icon">📿</div><h3>Dijital Tesbih</h3><p>Zikirlerinizi kolayca sayma</p></div>
-        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramazan</h3><p>Imsak/iftar ve oruc takibi</p></div>
-        <div class="feature-card"><div class="feature-icon">📅</div><h3>Dini Gunler</h3><p>Onemli dini gun ve geceler</p></div>
-      </div>
-    </div>
-    <div class="download">
-      <h2>Simdi Indir</h2>
-      <div class="store-buttons">
-        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
-        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
-      </div>
-    </div>
-    <div class="support">
-      <h2>Destek & Iletisim</h2>
-      <p>Sorulariniz icin bize ulasin:</p>
-      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
-    </div>
-  </div>
-
-  <!-- EN -->
-  <div class="lang-content" id="lang-en">
-    <div class="features">
-      <h2>Features</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Prayer Times</h3><p>Daily, weekly and monthly prayer times</p></div>
-        <div class="feature-card"><div class="feature-icon">📖</div><h3>Holy Quran</h3><p>114 surahs with audio recitation</p></div>
-        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Qibla Compass</h3><p>Precise qibla direction with calibration</p></div>
-        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Duas & Prayers</h3><p>10 categories, 22 prayers with Arabic and meanings</p></div>
-        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Adhan Notification</h3><p>Audio adhan and reminder alarms</p></div>
-        <div class="feature-card"><div class="feature-icon">📿</div><h3>Digital Tasbeeh</h3><p>Easy dhikr counter</p></div>
-        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramadan</h3><p>Suhoor/Iftar times and fasting tracker</p></div>
-        <div class="feature-card"><div class="feature-icon">📅</div><h3>Religious Days</h3><p>Important Islamic dates and events</p></div>
-      </div>
-    </div>
-    <div class="download">
-      <h2>Download Now</h2>
-      <div class="store-buttons">
-        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
-        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
-      </div>
-    </div>
-    <div class="support">
-      <h2>Support & Contact</h2>
-      <p>For questions or feedback, reach out to us:</p>
-      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
-    </div>
-  </div>
-
-  <!-- DE -->
-  <div class="lang-content" id="lang-de">
-    <div class="features">
-      <h2>Funktionen</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><div class="feature-icon">🕐</div><h3>Gebetszeiten</h3><p>Tagliche, wochentliche und monatliche Gebetszeiten</p></div>
-        <div class="feature-card"><div class="feature-icon">📖</div><h3>Heiliger Koran</h3><p>114 Suren mit Audio-Rezitation</p></div>
-        <div class="feature-card"><div class="feature-icon">🧭</div><h3>Qibla-Kompass</h3><p>Prazise Qibla-Richtung mit Kalibrierung</p></div>
-        <div class="feature-card"><div class="feature-icon">🤲</div><h3>Bittgebete</h3><p>10 Kategorien, 22 Gebete mit Arabisch und Bedeutung</p></div>
-        <div class="feature-card"><div class="feature-icon">🔔</div><h3>Adhan-Benachrichtigung</h3><p>Audio-Adhan und Erinnerungsalarme</p></div>
-        <div class="feature-card"><div class="feature-icon">📿</div><h3>Digitale Gebetskette</h3><p>Einfacher Dhikr-Zahler</p></div>
-        <div class="feature-card"><div class="feature-icon">🌙</div><h3>Ramadan</h3><p>Suhoor/Iftar-Zeiten und Fastenverfolgung</p></div>
-        <div class="feature-card"><div class="feature-icon">📅</div><h3>Religiose Tage</h3><p>Wichtige islamische Termine und Ereignisse</p></div>
-      </div>
-    </div>
-    <div class="download">
-      <h2>Jetzt Herunterladen</h2>
-      <div class="store-buttons">
-        <a class="store-btn ios" href="https://apps.apple.com/app/id6759039673">🍎 App Store</a>
-        <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.bayramgulac.namazvakti">▶ Google Play</a>
-      </div>
-    </div>
-    <div class="support">
-      <h2>Support & Kontakt</h2>
-      <p>Bei Fragen oder Feedback kontaktieren Sie uns:</p>
-      <p><a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a></p>
-    </div>
-  </div>
-
-</div>
-
-<!-- Footer -->
 <footer>
-  <div class="footer-links">
-    <a href="/privacy-policy.html">Privacy Policy / Gizlilik Politikasi</a>
-    <a href="mailto:bayram.namazapp@gmail.com">Contact</a>
-  </div>
-  <p>&copy; 2026 Namaz Vaktim. All rights reserved.</p>
+<p>Destek: <a href="mailto:bayram.namazapp@gmail.com">bayram.namazapp@gmail.com</a> · <a href="/privacy-policy.html">Gizlilik Politikası</a></p>
+<p>Not: Uygulamadaki bilgiler genel bilgilendirme amaçlıdır, fetva yerine geçmez.</p>
 </footer>
-
-<script>
-  const subtitles = {
-    tr: 'Namaz Vakitleri, Kur\'an, Kible Pusulasi ve daha fazlasi',
-    en: 'Prayer Times, Quran, Qibla Compass and more',
-    de: 'Gebetszeiten, Koran, Qibla-Kompass und mehr'
-  };
-  function setLang(lang) {
-    document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.lang-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.lang-tab')[{tr:0,en:1,de:2}[lang]].classList.add('active');
-    document.getElementById('lang-' + lang).classList.add('active');
-    document.getElementById('heroSubtitle').textContent = subtitles[lang];
-  }
-</script>
-
+</main>
 </body>
 </html>
